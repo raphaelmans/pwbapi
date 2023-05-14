@@ -28,4 +28,5 @@ ipython
 psutil
 tqdm
 matplotlib
+ultralytics>=8.0.100
 seaborn
