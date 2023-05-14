@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.vscode/
 # C extensions
 *.so
 opt/
@@ -11,7 +12,6 @@ opt/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
