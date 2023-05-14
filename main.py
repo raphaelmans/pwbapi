@@ -63,9 +63,10 @@ async def evaluate_pwb(image_data: schemas.ImageData, db: Session = Depends(get_
     result = ai_model.classify(gray_scale_image)
     evaluation = ai_model.evaluate(result)
 
-    # img_bytes = ImageUtils.convert_image_to_base64(image)
+    img_bytes = ImageUtils.convert_image_to_base64(image)
     result = schemas.ClassificationResultCreate(
-        class_name=evaluation["label"], probability=evaluation["probability"], created_at=datetime.datetime.now(), batch_id=image_data.batch_id)
+        class_name=evaluation["label"], probability=evaluation["probability"], created_at=datetime.datetime.now(), batch_id=image_data.batch_id,
+        image_data=img_bytes)
     db_classification_result = crud.create_classification_result(
         db=db, classification_result=result
     )

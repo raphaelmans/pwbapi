@@ -38,7 +38,7 @@ class ImageUtils:
         # Resize the image to the desired dimensions
         if image.mode == 'RGBA':
             image = image.convert('RGB')
-        resized_image = image.resize((256, 160))
+        resized_image = image.resize((128, 80))
 
         image_bytes = BytesIO()
 
